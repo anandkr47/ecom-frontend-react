@@ -12,7 +12,7 @@ const Orders = () => {
 
   const getOrders = async () => {
     try {
-      const { data } = await axios.get("/api/v1/auth/orders");
+      const { data } = await axios.get("https://delightful-bonnet-clam.cyclic.app/api/v1/auth/orders");
       setOrders(data);
     } catch (error) {
       console.log(error);
@@ -25,7 +25,7 @@ const Orders = () => {
 
   const handleCancelOrder = async (orderId) => {
     try {
-      const { data } = await axios.put(`/api/v1/auth/cancel-order/${orderId}`);
+      const { data } = await axios.put(`https://delightful-bonnet-clam.cyclic.app/api/v1/auth/cancel-order/${orderId}`);
       // Display success message or perform any other action upon cancellation
       toast.success("Product cancelled Successfully");
       console.log(data);
@@ -84,7 +84,7 @@ const Orders = () => {
                     <div className="row mb-2 p-3 card flex-row" key={p?.product?._id}>
                       <div className="col-md-4">
                         <img
-                          src={`/api/v1/product/product-photo/${p?.product?._id}`}
+                          src={`https://delightful-bonnet-clam.cyclic.app/api/v1/product/product-photo/${p?.product?._id}`}
                           className="card-img-top"
                           alt={p?.product?.name}
                           width="100px"

@@ -48,7 +48,7 @@ const CartPage = () => {
   // Get payment gateway token
   const getToken = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/braintree/token");
+      const { data } = await axios.get("https://delightful-bonnet-clam.cyclic.app/api/v1/product/braintree/token");
       setClientToken(data?.clientToken);
     } catch (error) {
       console.log(error);
@@ -77,7 +77,7 @@ const CartPage = () => {
         rentalDays: rentProduct ? rentalDays : 0, // Set rentalDays to 0 if not renting
       };
   
-      const { data } = await axios.post("/api/v1/product/braintree/payment", requestData);
+      const { data } = await axios.post("https://delightful-bonnet-clam.cyclic.app/api/v1/product/braintree/payment", requestData);
       setLoading(false);
       localStorage.removeItem("cart");
       setCart([]);
@@ -130,7 +130,7 @@ const CartPage = () => {
                 <div className="row card flex-row" key={p._id}>
                   <div className="col-md-4">
                     <img
-                      src={`/api/v1/product/product-photo/${p._id}`}
+                      src={`https://delightful-bonnet-clam.cyclic.app/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                       width="100%"
