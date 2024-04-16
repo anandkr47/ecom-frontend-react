@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../context/auth";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
-import { token } from "morgan";
+
 //import Spinner from "../Spinner.js";
 import Spinner from "../spinner";
 
