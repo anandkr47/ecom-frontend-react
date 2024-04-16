@@ -142,3 +142,8 @@
   color: white;
   padding: 20px 0px;
 }
+@media (max-width: 350px) {
+  .navbar-brand {
+    font-size: .9rem; /* Adjust font size for smaller screens */
+  }
+}
